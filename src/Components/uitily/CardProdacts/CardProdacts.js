@@ -34,7 +34,7 @@ const labels = {
 };
 
 
-export default function ActionAreaCard() {
+export default function CardProdacts() {
   const value = 3.5;
   return (
     <Card>

@@ -5,9 +5,9 @@ import { Container } from "@mui/system";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import ActionAreaCard from '../CardBestSeller/CardBestSeller';
+import CardProdacts from "../CardProdacts/CardProdacts";
 
-export default function ResponsiveGrid() {
+export default function Prodacts() {
   return (
     <Container fixed>
       <Stack spacing={2} direction="row" 
@@ -38,7 +38,7 @@ export default function ResponsiveGrid() {
         columns={{ xs: 12, sm: 12, md: 12 }}>
           {Array.from(Array(8 / 2)).map((_, index) => (
             <Grid item xs={12} sm={6} md={3} key={index}>
-              <ActionAreaCard />
+              <CardProdacts />
             </Grid>
           ))}
         </Grid>
