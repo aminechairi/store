@@ -7,7 +7,7 @@ export default function CutBacks() {
     <Container fixed>
       <div className="ab-cutBacks" 
         style={{
-          backgroundImage: `url(${ require("../../../images/laptops.png") })`,
+          backgroundImage: `url(${ require("../../images/laptops.png") })`,
         }}
       >
           <div className="bg">

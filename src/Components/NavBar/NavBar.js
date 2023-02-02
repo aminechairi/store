@@ -12,7 +12,7 @@ import Menu from '@mui/material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import logo from "../../../images/logo.png";
+import logo from "../../images/logo.png";
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
 import { Container } from "@mui/system";
 import Button from '@mui/material/Button';

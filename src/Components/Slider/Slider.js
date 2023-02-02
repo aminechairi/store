@@ -34,7 +34,7 @@ export default function Slider() {
         <div className="carousel-item active float-left w-full">
           <div className="slider-content"
           style={{
-            backgroundImage: `url("${ require("../../../images/slider1.png") }")`,
+            backgroundImage: `url("${ require("../../images/slider1.png") }")`,
             backgroundColor: "#deb9dc",
           }}>
             <div className="bg">
@@ -47,7 +47,7 @@ export default function Slider() {
         <div className="carousel-item float-left w-full">
           <div className="slider-content"
           style={{
-            backgroundImage: `url("${ require("../../../images/slider4.png") }")`,
+            backgroundImage: `url("${ require("../../images/slider4.png") }")`,
             backgroundColor: "rgb(27 55 112)",
           }}>
             <div className="bg">
@@ -60,7 +60,7 @@ export default function Slider() {
         <div className="carousel-item float-left w-full">
           <div className="slider-content"
           style={{
-            backgroundImage: `url("${ require("../../../images/prod4.png") }")`,
+            backgroundImage: `url("${ require("../../images/prod4.png") }")`,
             backgroundColor: "rgb(233 95 98)",
           }}>
             <div className="bg">

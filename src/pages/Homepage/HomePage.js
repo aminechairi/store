@@ -1,22 +1,43 @@
-import NavBar from "../../Components/HomePage/NavBar/NavBar";
-import Slider from "../../Components/HomePage/Slider/Slider";
-import Categories from "../../Components/HomePage/Categories/Categories";
-import Prodacts from "../../Components/uitily/Prodacts/Prodacts";
-import CutBacks from "../../Components/HomePage/CutBacks/CutBacks";
-import TheMostFamousBrands from "../../Components/HomePage/TheMostFamousBrands/TheMostFamousBrands";
-import Footer from "../../Components/HomePage/Footer/Footer";
+import NavBar from "../../Components/NavBar/NavBar";
+import Slider from "../../Components/Slider/Slider";
+import Categories from "../../Components/Categories/Categories";
+import Prodacts from "../../Components/Prodacts/Prodacts";
+import CutBacks from "../../Components/CutBacks/CutBacks";
+import TheMostFamousBrands from "../../Components/TheMostFamousBrands/TheMostFamousBrands";
+import Footer from "../../Components/Footer/Footer";
 
 export default function HomePage() {
   return (
     <>
+
       <NavBar />
+
       <Slider />
-      <Categories />
-      <Prodacts />
+
+      <Categories
+        nameTitle="Categories"
+        bottonStatue={ true }
+        displayNumber={ 6 }
+        pagination={false} />
+
+      <Prodacts 
+      nameTitle="Best Seller"
+      bottonTitleStatue={ true }
+      displayNumber={ 4 }
+      pagination={ false }/>
+
       <CutBacks />
-      <Prodacts />
+
+      <Prodacts 
+      nameTitle="Latest Fashion"
+      bottonTitleStatue={ true }
+      displayNumber={ 4 }
+      pagination={ false } />
+
       <TheMostFamousBrands />
+
       <Footer />
+
     </>
-  )
-}
+  );
+};

@@ -42,7 +42,7 @@ export default function CardProdacts() {
         <CardMedia
           component="img"
           height="140"
-          image={require("../../../images/item.png")}
+          image={require("../../images/item.png")}
           alt="green iguana"
         />
           <Box
