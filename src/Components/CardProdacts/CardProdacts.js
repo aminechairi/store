@@ -10,6 +10,7 @@ import Rating from '@mui/material/Rating';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import StarIcon from '@mui/icons-material/Star';
+import { Link } from 'react-router-dom';
 
 const StyledRating = styled(Rating)({
   '& .MuiRating-iconFilled': {
@@ -39,70 +40,78 @@ export default function CardProdacts() {
   return (
     <Card>
       <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image={require("../../images/item.png")}
-          alt="green iguana"
-        />
+        <Link to='/prodact/1' onClick={() => {
+            document.documentElement.scrollTop = 0;
+        }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={require("../../images/item.png")}
+            alt="green iguana"
+          />
+        </Link>
+        <Box
+          sx={{
+            '& > legend': { mt: 2 },
+          }}
+          style={{
+              padding: '0px 16px',
+          }}
+        >
+          <StyledRating
+            name="customized-color"
+            defaultValue={0}
+            getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+            precision={1}
+            icon={<FavoriteIcon fontSize="inherit" />}
+            emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+          />
+        </Box>
+        <Link to='/prodact/1' onClick={() => {
+            document.documentElement.scrollTop = 0;
+        }}>
+          <CardContent 
+              style={{
+                padding: '0px 16px 16px',
+              }}
+          >
+            <Typography gutterBottom variant="h5" component="div">
+              Lizard
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Lizards are a widespread group of squamate reptiles, with over 6,000
+              species, ranging across all continents except Antarctica
+            </Typography>
+          </CardContent>
           <Box
             sx={{
-              '& > legend': { mt: 2 },
+              width: '100%',
+              display: 'flex',
+              justifyContent: "space-between",
+              flexGrow: "wrape",
             }}
-            style={{
-              padding: '0px 16px',
-            }}
-          >
-            <StyledRating
-              name="customized-color"
-              defaultValue={0}
-              getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-              precision={0.5}
-              icon={<FavoriteIcon fontSize="inherit" />}
-              emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
-            />
-          </Box>        
-        <CardContent 
             style={{
               padding: '0px 16px 16px',
             }}
-        >
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-        <Box
-          sx={{
-            width: '100%',
-            display: 'flex',
-            justifyContent: "space-between",
-            flexGrow: "wrape",
-          }}
-          style={{
-            padding: '0px 16px 16px',
-          }}
-        >
-          <Rating
-            name="text-feedback"
-            value={value}
-            readOnly
-            precision={0.5}
-            emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
-          />
-          <Box>{labels[value]}</Box>
-        </Box>
-        <Typography gutterBottom variant="h6" component="div"
-          style={{
-            padding: '0px 16px 16px',
-            margin: "0",
-          }}
-        >
-          <span>150.00</span> <span>$</span>
-        </Typography>
+          >
+            <Rating
+              name="text-feedback"
+              value={value}
+              readOnly
+              precision={1}
+              emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+            />
+            <Box>{labels[value]}</Box>
+          </Box>
+          <Typography gutterBottom variant="h6" component="div"
+            style={{
+              padding: '0px 16px 16px',
+              margin: "0",
+            }}
+          >
+            <span>150.00</span> <span>$</span>
+          </Typography>        
+        </Link>
       </CardActionArea>
     </Card>
   );

@@ -7,7 +7,7 @@ export default function ActionAreaCard() {
     <Card sx={{ maxWidth: 345, margin: "0px auto", }}>
       <CardActionArea>
         <img
-          src={ require('../../images/brand3.png') }
+          src={ require('../../images/brand2.png') }
           style={{
             width: "100%",
           }}

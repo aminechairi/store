@@ -42,11 +42,7 @@ export default function ResponsiveGrid( props ) {
               }
           </Typography>
           <Link to='/allcategores' onClick={() => {
-              // scroll top
-              window.scrollTo({
-                top: 0,
-                behavior: "none"
-              },)
+            document.documentElement.scrollTop = 0;
           }}>
             <Button variant="contained" style={{
               backgroundColor: "#272727",
@@ -89,4 +85,4 @@ export default function ResponsiveGrid( props ) {
       </div>
     </Container>
   );
-}
+};

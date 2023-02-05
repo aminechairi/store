@@ -16,6 +16,7 @@ import logo from "../../images/logo.png";
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
 import { Container } from "@mui/system";
 import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 
 let auth = false;
 
@@ -164,12 +165,16 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <p>Log In</p>
-      </MenuItem>
-      <MenuItem>
-        <p>Sign In</p>
-      </MenuItem>
+      <Link to="/login">
+        <MenuItem>
+          <p>Log In</p>
+        </MenuItem>
+      </Link>
+      <Link to="/register">
+        <MenuItem>
+          <p>Register</p>
+        </MenuItem>
+      </Link>
     </Menu>
   );
 
@@ -187,9 +192,11 @@ export default function PrimarySearchAppBar() {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-          <img src={logo} alt=""
-            style={{width: "40px",}}
-          />
+          <Link to="/">
+            <img src={logo} alt=""
+              style={{width: "40px",}}
+            />
+          </Link>
           </IconButton>
           <Typography
             variant="h6"
@@ -231,21 +238,27 @@ export default function PrimarySearchAppBar() {
                 </Box>
               :
                 <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                  <Button variant="inherit"
-                    style={{
-                      textTransform: "none",
-                      border: "1px solid rgb(255 255 255 / 39%)",
-                      margin: "0px 10px 0px 0px",
-                    }}
-                  >
-                    Log In
-                  </Button>
-                  <Button color="inherit"
-                  style={{
-                    textTransform: "none",
-                  }}>
-                    Sign In
-                  </Button>
+                  <Link to="/login">
+                    <Button 
+                      variant="outlined"
+                      sx={{ color: "#fff", }}
+                      style={{
+                        textTransform: "none",
+                        // border: "1px solid rgb(255 255 255 / 39%)",
+                        margin: "0px 10px 0px 0px",
+                      }}
+                    >
+                      Log In
+                    </Button>                  
+                  </Link>
+                  <Link to="/register">
+                    <Button color="inherit"
+                      style={{
+                        textTransform: "none",
+                      }}>
+                      Register
+                    </Button>
+                  </Link>
                 </Box>
             }
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>

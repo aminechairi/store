@@ -22,6 +22,7 @@ export default function HomePage() {
 
       <Prodacts 
       nameTitle="Best Seller"
+      bottonStatue={ true }
       bottonTitleStatue={ true }
       displayNumber={ 4 }
       pagination={ false }/>
@@ -30,11 +31,16 @@ export default function HomePage() {
 
       <Prodacts 
       nameTitle="Latest Fashion"
+      bottonStatue={ true }
       bottonTitleStatue={ true }
       displayNumber={ 4 }
       pagination={ false } />
 
-      <TheMostFamousBrands />
+      <TheMostFamousBrands 
+        nameTitle="The Most Famous Brands"
+        bottonStatue={ true }
+        displayNumber={ 8 }
+        pagination={ false } />
 
       <Footer />
 

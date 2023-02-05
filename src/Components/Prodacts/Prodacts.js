@@ -44,19 +44,15 @@ export default function Prodacts( props ) {
               }
           </Typography>
           <Link to='/prodacts' onClick={() => {
-              // scroll top
-              window.scrollTo({
-                top: 0,
-                behavior: "none"
-              },)
+            document.documentElement.scrollTop = 0;
           }}>
             <Button variant="contained" style={{
               backgroundColor: "#272727",
+              display: props.bottonStatue === true ? 'block' : 'none',
             }}>
               More
             </Button>          
           </Link>
-
         </Stack>
         : null
       }
