@@ -1,7 +1,6 @@
 import { Container } from "@mui/system";
 import { Card, Grid, Stack, Typography } from "@mui/material";
 import Button from '@mui/material/Button';
-import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import * as React from 'react';
 import IconButton from '@mui/material/IconButton';
@@ -12,13 +11,12 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
 
-export default function Address() {
+export default function UserProfile() {
 
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -52,7 +50,7 @@ export default function Address() {
       <MenuItem
         onClick={() => {
           handleClickOpen();
-          setStatusRequest("edit");
+          setStatusRequest("edite");
         }}
       >
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
@@ -61,23 +59,6 @@ export default function Address() {
           </Badge>
         </IconButton>
         <p>Edit</p>
-      </MenuItem>
-      <MenuItem
-        onClick={() => {
-          handleClickOpen();
-          setStatusRequest("delete");
-        }}
-      >
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge>
-            <DeleteIcon />
-          </Badge>
-        </IconButton>
-        <p>Delete</p>
       </MenuItem>
     </Menu>
   );
@@ -105,64 +86,90 @@ export default function Address() {
             margin: "20px 0px",
           }}
         >
-        Address book
+        Personal Page
       </Typography>
-      {
-        Array.from( Array( 2 ) ).map((_, i) => {
-          return (
-            <Card 
-              key={i + 1}
-              sx={{
-                padding: '10px',
-                marginBottom: "20px",
+        <Card 
+          sx={{
+            padding: '10px',
+            marginBottom: "20px",
+          }}
+        >
+          <Grid container
+            sx={{
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <Grid item>
+              <Typography sx={{
+                margin: '10px 0px',
+              }} gutterBottom variant="h5" component="div">
+                  Personal data
+              </Typography>                  
+            </Grid>
+            <Grid item>
+              <IconButton
+                size="small"
+                aria-label="show more"
+                aria-controls={mobileMenuId}
+                aria-haspopup="true"
+                onClick={handleMobileMenuOpen}
+                color="inherit"
+              >
+                <MoreIcon />
+              </IconButton>
+              {renderMobileMenu}
+            </Grid>
+          </Grid>
+          <Typography sx={{
+              margin: '10px 0px',
+              textAlign: "center",
+            }} 
+            variant="subtitle1" 
+            gutterBottom
+            noWrap
+          >
+            <span style={{
+                fontWeight: "700",
               }}
             >
-              <Grid container
-                sx={{
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                }}
-              >
-                <Grid item>
-                  <Typography sx={{
-                    margin: '10px 0px',
-                  }} gutterBottom variant="h5" component="div">
-                      home { i + 1 }
-                  </Typography>                  
-                </Grid>
-                <Grid item>
-                  <IconButton
-                    size="small"
-                    aria-label="show more"
-                    aria-controls={mobileMenuId}
-                    aria-haspopup="true"
-                    onClick={handleMobileMenuOpen}
-                    color="inherit"
-                  >
-                    <MoreIcon />
-                  </IconButton>
-                  {renderMobileMenu}
-                </Grid>
-              </Grid>
-              <Typography sx={{
-                margin: '10px 0px',
-              }} variant="subtitle1" gutterBottom>
-                Cairo, Nasr City, 90th Street, Building 14
-              </Typography>
-              <Typography sx={{
-                margin: '10px 0px',
-              }} variant="subtitle1" gutterBottom>
-                <span style={{
-                  fontWeight: "700",
-                }}>
-                  Phone Number:&nbsp;
-                </span> 
-                0021313432423
-              </Typography>
-            </Card>
-          )
-        })
-      }
+              User Name:&nbsp;
+            </span> 
+              Amine Chairi
+          </Typography>
+          <Typography sx={{
+              margin: '10px 0px',
+              textAlign: "center",
+            }} 
+            variant="subtitle1" 
+            gutterBottom
+            noWrap
+          >
+            <span style={{
+                fontWeight: "700",
+              }}
+            >
+              Email:&nbsp;
+            </span> 
+              Aminechairi2000@gmail.com
+          </Typography>
+          <Typography sx={{
+              margin: '10px 0px',
+              textAlign: "center",
+            }} 
+            variant="subtitle1" 
+            gutterBottom
+            noWrap
+          >
+            <span style={{
+                fontWeight: "700",
+              }}
+            >
+              Phone Number:&nbsp;
+            </span> 
+              0021313432423
+          </Typography>
+        </Card>
       <Stack 
         sx={{
           marginBottom: "20px",
@@ -174,37 +181,13 @@ export default function Address() {
           }}
           onClick={() => {
             handleClickOpen();
-            setStatusRequest("add");
+            setStatusRequest("changePassword");
           }}
         >
-          Add a new address
+          Change Password
         </Button>
         {
-          statusRequest === "delete" ?
-          <Dialog
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="responsive-dialog-title"
-          >
-            <DialogTitle id="responsive-dialog-title">
-              {"Delete address"}
-            </DialogTitle>
-            <DialogContent>
-              <DialogContentText>
-                Let Google help apps determine location. This means sending anonymous
-                location data to Google, even when no apps are running.
-              </DialogContentText>
-            </DialogContent>
-            <DialogActions>
-              <Button autoFocus onClick={handleClose}>
-                Disagree
-              </Button>
-              <Button onClick={handleClose} autoFocus>
-                Agree
-              </Button>
-            </DialogActions>
-          </Dialog>
-        : statusRequest === "edit" ?
+          statusRequest === "edite" ?
           <Dialog
             fullScreen={fullScreen}
             open={open}
@@ -212,14 +195,14 @@ export default function Address() {
             aria-labelledby="responsive-dialog-title"
           >
             <DialogTitle id="responsive-dialog-title">
-              {"Edit address"}
+              {"Edit Personel Data"}
             </DialogTitle>
             <DialogContent>
               <TextField
                 autoFocus
                 margin="dense"
                 id="title"
-                label="Naming the address, for example (home - work)"
+                label="User name"
                 type="text"
                 fullWidth
                 variant="standard"
@@ -228,8 +211,8 @@ export default function Address() {
                 autoFocus
                 margin="dense"
                 id="address"
-                label="Detailed address"
-                type="text"
+                label="Adress email"
+                type="email"
                 fullWidth
                 variant="standard"
               />
@@ -237,7 +220,7 @@ export default function Address() {
                 autoFocus
                 margin="dense"
                 id="phone"
-                label="Phone number"
+                label="Nuber phone"
                 type="number"
                 fullWidth
                 variant="standard"
@@ -252,7 +235,7 @@ export default function Address() {
               </Button>
             </DialogActions>
           </Dialog>
-        : statusRequest === "add" ?
+        :
           <Dialog
             fullScreen={fullScreen}
             open={open}
@@ -260,24 +243,15 @@ export default function Address() {
             aria-labelledby="responsive-dialog-title"
           >
             <DialogTitle id="responsive-dialog-title">
-              {"Add a new addres"}
+              {"Change Password"}
             </DialogTitle>
             <DialogContent>
               <TextField
                 autoFocus
                 margin="dense"
-                id="title"
-                label="Naming the address, for example (home - work)"
-                type="text"
-                fullWidth
-                variant="standard"
-              />
-              <TextField
-                autoFocus
-                margin="dense"
                 id="address"
-                label="Detailed address"
-                type="text"
+                label="Enter the old password"
+                type="password"
                 fullWidth
                 variant="standard"
               />
@@ -285,8 +259,8 @@ export default function Address() {
                 autoFocus
                 margin="dense"
                 id="phone"
-                label="Phone number"
-                type="number"
+                label="Enter the new password"
+                type="password"
                 fullWidth
                 variant="standard"
               />
@@ -300,7 +274,6 @@ export default function Address() {
               </Button>
             </DialogActions>
           </Dialog>
-          : null
         }
       </Stack>
     </Container>

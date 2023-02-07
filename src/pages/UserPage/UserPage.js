@@ -123,11 +123,12 @@ export default function UserPage() {
                 {
                   Text: 'Profile personly',
                   Icon: <AccountCircleIcon />,
-                  Path: "/",
+                  Path: "user-profile",
                 },
                 ].map((items, index) => (
                 
-                <Link to={items.Path} key={items.Text}>
+                <Link to={items.Path} key={items.Text} 
+                onClick={handleDrawerClose}>
                   <ListItem disablePadding sx={{ display: 'block' }}>
                     <ListItemButton
                       sx={{
