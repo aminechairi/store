@@ -7,6 +7,7 @@ import Rating from '@mui/material/Rating';
 import StarIcon from '@mui/icons-material/Star';
 import { CardActionArea } from '@mui/material';
 import Pagination from '@mui/material/Pagination';
+import Avatar from '@mui/material/Avatar';
 
 const labels = {
   0.5: 'Useless',
@@ -251,8 +252,22 @@ export default function ProdactId() {
           </Typography>
           <Typography variant="h6" gutterBottom 
             sx={{
-              display: 'flex',
               alignItems: 'center',
+              display: 'flex',
+              fontWeight: "700",
+            }}
+          >
+          <Avatar
+            alt="Remy Sharp"
+            src=""
+            sx={{ width: 24, height: 24, marginRight: "6px", }}
+          />
+          amine messeiyah
+          </Typography>
+          <Typography variant="h6" gutterBottom 
+            sx={{
+              alignItems: 'center',
+              display: 'flex',
             }}
           >
             <Rating
@@ -293,7 +308,7 @@ export default function ProdactId() {
                 "
                 id="exampleFormControlTextarea1"
                 rows={3}
-                placeholder="Your message"
+                placeholder="Your comment"
                 defaultValue={""}
               />
             </div>
@@ -304,12 +319,25 @@ export default function ProdactId() {
               3400 $
           </Button>
       </Stack>
-      <Stack>
+      <Stack sx={{
+        marginBottom: "60px",
+      }}>
           {
             Array.from(Array(6)).map((items, index) => {
               return (
                 <CardActionArea key={index + 1} sx={{ padding: "10px", }}>
-                  <Typography variant="h6">
+                  <Typography variant="h6"
+                    sx={{
+                      alignItems: 'center',
+                      display: 'flex',
+                      fontWeight: "700",
+                    }}
+                  >
+                  <Avatar
+                    alt="Remy Sharp"
+                    src=""
+                    sx={{ width: 24, height: 24, marginRight: "6px", }}
+                  />
                     amine chairi&nbsp;
                     <span style={{ 
                       color: "#faaf00",
@@ -324,7 +352,7 @@ export default function ProdactId() {
             })
           }
           <div style={{
-              margin: "40px 0px 0px",
+              margin: "20px 0px 0px",
               display: "flex",
               justifyContent: "center", 
             }}>
@@ -341,4 +369,4 @@ export default function ProdactId() {
       </Stack>
   </Container>
   );
-}
+};

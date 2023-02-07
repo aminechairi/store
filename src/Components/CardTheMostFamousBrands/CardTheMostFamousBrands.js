@@ -7,7 +7,7 @@ export default function ActionAreaCard() {
     <Card sx={{ maxWidth: 345, margin: "0px auto", }}>
       <CardActionArea>
         <img
-          src={ require('../../images/brand2.png') }
+          src='https://download.logo.wine/logo/Samsung_India_Software_Centre/Samsung_India_Software_Centre-Logo.wine.png'
           style={{
             width: "100%",
           }}

@@ -12,7 +12,7 @@ export default function ActionAreaCard() {
             style={{
               margin: "0px auto",              
             }}
-            src={require('../../images/clothe.png')} alt='' />
+            src='https://th.bing.com/th/id/R.ffb66335dcc6e51ab5a96d15b0618ca7?rik=k1cmzKYYoFbjqA&pid=ImgRaw&r=0' alt='' />
           <CardContent>
             <Typography style={{textAlign: "center",}} gutterBottom variant="h5" component="div">
               Lizard

@@ -6,6 +6,10 @@ import AllBrands from "./pages/AllBrands/AllBrands";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import PageProdactId from "./pages/PageProdactId/PageProdactId.js";
+import UserPage from "./pages/UserPage/UserPage";
+import AllOrders from "./Components/UserPageComponents/AllOrders/AllOrders";
+import Favorite from "./Components/UserPageComponents/Favorite/Favorite";
+import Address from "./Components/UserPageComponents/Address/Address";
 
 function App() {
 
@@ -19,7 +23,12 @@ function App() {
         <Route path="/prodact/:id" element={ <PageProdactId /> } />
         <Route path="/allbrands" element={ <AllBrands /> } />
         <Route path="/login" element={ <LoginPage /> } />
-        <Route path="/register" element={ <RegisterPage /> } />        
+        <Route path="/register" element={ <RegisterPage /> } />
+        <Route path="/user" element={<UserPage />}>
+          <Route index element={<AllOrders />} />
+          <Route path="favorite" element={<Favorite />} />
+          <Route path="address" element={<Address />} />
+        </Route>
       </Routes>
     </BrowserRouter>
     </>

@@ -18,7 +18,7 @@ import { Container } from "@mui/system";
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 
-let auth = false;
+let auth = true;
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -102,7 +102,9 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <Link to="/user">
+        <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      </Link>
     </Menu>
   );
 
@@ -146,7 +148,7 @@ export default function PrimarySearchAppBar() {
             <LocalGroceryStoreOutlinedIcon />
           </Badge>
         </IconButton>
-        <p>shopping czrt</p>
+        <p>shopping cart</p>
       </MenuItem>
     </Menu>
     :
@@ -244,7 +246,6 @@ export default function PrimarySearchAppBar() {
                       sx={{ color: "#fff", }}
                       style={{
                         textTransform: "none",
-                        // border: "1px solid rgb(255 255 255 / 39%)",
                         margin: "0px 10px 0px 0px",
                       }}
                     >
@@ -280,4 +281,4 @@ export default function PrimarySearchAppBar() {
       {renderMenu}
     </Box>
   );
-}
+};
