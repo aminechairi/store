@@ -140,18 +140,20 @@ export default function PrimarySearchAppBar() {
         </IconButton>
         <p>Profile</p>
       </MenuItem>
-      <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge color="error">
-            <LocalGroceryStoreOutlinedIcon />
-          </Badge>
-        </IconButton>
-        <p>shopping cart</p>
-      </MenuItem>
+      <Link to="/user/cart">
+        <MenuItem>
+          <IconButton
+            size="large"
+            aria-label="show 17 new notifications"
+            color="inherit"
+          >
+            <Badge color="error">
+              <LocalGroceryStoreOutlinedIcon />
+            </Badge>
+          </IconButton>
+          <p>shopping cart</p>
+        </MenuItem>      
+      </Link>
     </Menu>
     :
     <Menu
@@ -223,11 +225,13 @@ export default function PrimarySearchAppBar() {
             {
               auth === true ?
                 <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                  <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-                    <Badge color="error">
-                      <LocalGroceryStoreOutlinedIcon />
-                    </Badge>
-                  </IconButton> 
+                  <Link to="/user/cart">
+                    <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+                      <Badge color="error">
+                        <LocalGroceryStoreOutlinedIcon />
+                      </Badge>
+                    </IconButton>                    
+                  </Link>
                   <IconButton
                     size="large"
                     edge="end"

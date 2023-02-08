@@ -73,6 +73,9 @@ export default function AllOrders() {
                             Quantity
                           </label>
                           <input
+                          style={{
+                            width: "100%",
+                          }}
                             type="number"
                             className="
                                   form-control

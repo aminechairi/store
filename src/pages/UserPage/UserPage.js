@@ -15,6 +15,7 @@ import ListItemText from '@mui/material/ListItemText';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import BookmarksIcon from '@mui/icons-material/Bookmarks';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
+import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import NavBar from "../../Components/NavBar/NavBar";
 import { Stack } from '@mui/material';
@@ -110,6 +111,11 @@ export default function UserPage() {
                   Icon: <ManageAccountsIcon />,
                   Path: "/user",
                 },
+                {
+                  Text: 'Cart',
+                  Icon: <LocalGroceryStoreOutlinedIcon />,
+                  Path: "cart",
+                },                
                 {
                   Text: 'Favorite list',
                   Icon: <BookmarksIcon />,

@@ -56,7 +56,7 @@ export default function Prodacts( props ) {
         </Stack>
         : null
       }
-      <Box sx={{ flexGrow: 1, margin: "40px 0px 80px", }}>
+      <Box sx={{ flexGrow: 1, margin: "40px 0px 40px", }}>
         <Grid container 
         spacing={{ xs: 2, md: 3 }}
         columns={{ xs: 12, sm: 12, md: 12, lg: 12, }}>

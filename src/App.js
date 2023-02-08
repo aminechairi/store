@@ -11,6 +11,7 @@ import AllOrders from "./Components/UserPageComponents/AllOrders/AllOrders";
 import Favorite from "./Components/UserPageComponents/Favorite/Favorite";
 import Address from "./Components/UserPageComponents/Address/Address";
 import UserProfile from "./Components/UserPageComponents/UserProfile/UserProfile";
+import Cart from "./Components/UserPageComponents/Cart/Cart";
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="favorite" element={<Favorite />} />
           <Route path="address" element={<Address />} />
           <Route path="user-profile" element={<UserProfile />} />
+          <Route path="cart" element={<Cart />} />
         </Route>
       </Routes>
     </BrowserRouter>
