@@ -33,10 +33,9 @@ export default function Cart() {
       >
         Cart
       </Typography>
-      
       <Grid container spacing={2}>
         <Grid item xs={12} md={4} lg={3}>
-          <div className="block pb-6 rounded-lg bg-white">
+          <div className="block pb-3 rounded-lg bg-white">
             <form>
               <div className="form-group mb-6">
                 <input
@@ -173,6 +172,16 @@ export default function Cart() {
                           fontWeight: "600",
                           }}>1.5</span>
                         </Typography>
+                  <Stack style={{
+                    width: "26px",
+                    height: "26px",
+                    backgroundColor: "red",
+                    borderRadius: "50%",
+                    marginRight: "10px",
+                    cursor: "pointer",
+                    marginBottom: "7px",
+                  }}>
+                  </Stack>
                         <div>
                           <div>
                             <div className="mb-3 xl:w-96 flex items-center space-x-2">

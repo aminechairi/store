@@ -18,8 +18,6 @@ import { Container } from "@mui/system";
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 
-let auth = true;
-
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -61,6 +59,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function PrimarySearchAppBar() {
+
+  // auth
+  const [auth, setAuth] = React.useState(false);
+
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -209,6 +212,9 @@ export default function PrimarySearchAppBar() {
             noWrap
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
+            onDoubleClick={() => {
+              setAuth(!auth);
+            }}
           >
             BALL
           </Typography>
