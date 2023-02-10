@@ -61,7 +61,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function PrimarySearchAppBar() {
 
   // auth
-  const [auth, setAuth] = React.useState(false);
+  const [auth, setAuth] = React.useState(true);
 
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -107,7 +107,7 @@ export default function PrimarySearchAppBar() {
       <Link to="/user">
         <MenuItem onClick={handleMenuClose}>My account</MenuItem>
       </Link>
-      <Link to="/user/user-profile">
+      <Link to="/user/profile">
         <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       </Link>
     </Menu>
@@ -212,7 +212,7 @@ export default function PrimarySearchAppBar() {
             noWrap
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
-            onDoubleClick={() => {
+            onClick={() => {
               setAuth(!auth);
             }}
           >

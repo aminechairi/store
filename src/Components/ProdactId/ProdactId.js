@@ -8,6 +8,10 @@ import StarIcon from '@mui/icons-material/Star';
 import { CardActionArea } from '@mui/material';
 import Pagination from '@mui/material/Pagination';
 import Avatar from '@mui/material/Avatar';
+import CircleIcon from '@mui/icons-material/Circle';
+import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
+import Snackbar from '@mui/material/Snackbar';
+import BeenhereIcon from '@mui/icons-material/Beenhere';
 
 const labels = {
   0.5: 'Useless',
@@ -28,8 +32,27 @@ function getLabelText(value) {
 
 export default function ProdactId() {
 
+  // alert add to card
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+
+  // reviews
   const [value, setValue] = React.useState(2);
   const [hover, setHover] = React.useState(-1);
+
+
 
   // pagination
   const [page, setPage] = React.useState(1);
@@ -41,7 +64,12 @@ export default function ProdactId() {
   };
 
   return (
-  <Container fixed>
+    <Stack
+      sx={{
+        backgroundColor: "#f7f7f7",
+      }}
+    >
+    <Container fixed>
       <Box sx={{ flexGrow: 1, margin: "20px 0px 20px", }}>
         <Grid container>
           <Grid item xs={12} sm={12} md={4} lg={4}>
@@ -123,34 +151,49 @@ export default function ProdactId() {
             </div>
           </Grid>
           <Grid item xs={12} sm={12} md={8} lg={6}>
-            <Stack  sx={{ padding: { xs: '20px 0px 0px', lg: '20px' } }}>
+            <Stack  sx={{ padding: { xs: '20px 0px 0px', md: '20px' }, }}>
                 <Stack style={
                   {
                     marginBottom: "calc( 20px - 5.6px)",
                   }
                 }>
-                  <Typography variant="h6" gutterBottom>
-                    h6. Heading:
+                  <Typography variant="h5" gutterBottom>
+                    Aphone 14
                   </Typography>
-                  <Typography variant="subtitle1" gutterBottom>
+                  <Typography variant="h6" gutterBottom>
+                    3600.00 $
+                  </Typography>
+                  <Typography
+                    variant="subtitle1" 
+                    gutterBottom
+                    sx={{
+                      margin: "0px",
+                    }}
+                  >
                     subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
                     blanditiis tenetur &nbsp; 
-                    <span style={{ 
-                    color: "#faaf00",
-                    fontWeight: "600",
-                    }}>1.5</span>
+
+                    <span 
+                      style={{ 
+                      color: "#faaf00",
+                      fontWeight: "600",
+                      }}
+                    >
+                      1.5
+                    </span>
+
                   </Typography>
                 </Stack>
                 <Grid container>
                   <Grid>
                     <Typography variant="h6" gutterBottom>
-                      h6. Heading:
+                      brand:
                     </Typography>
                   </Grid>
                   <Grid>
                     <Typography variant="h6" gutterBottom 
                     style={{ fontWeight: "700", }}>
-                      &nbsp; h6. Heading:
+                      &nbsp; name brand
                     </Typography>
                   </Grid>
                 </Grid>
@@ -159,36 +202,38 @@ export default function ProdactId() {
                     marginBottom: "20px",
                   }
                 }>
-                  <Stack style={{
-                    width: "26px",
-                    height: "26px",
-                    backgroundColor: "red",
-                    borderRadius: "50%",
-                    marginRight: "10px",
-                    cursor: "pointer",
-                    marginBottom: "7px",
-                  }}>
-                  </Stack>
-                  <Stack style={{
-                    width: "26px",
-                    height: "26px",
-                    backgroundColor: "blue",
-                    borderRadius: "50%",
-                    marginRight: "10px",
-                    cursor: "pointer",
-                    marginBottom: "7px",
-                  }}>
-                  </Stack>
-                  <Stack style={{
-                    width: "26px",
-                    height: "26px",
-                    backgroundColor: "green",
-                    borderRadius: "50%",
-                    marginRight: "10px",
-                    cursor: "pointer",
-                    marginBottom: "7px",
-                  }}>
-                  </Stack>
+                  <CircleIcon
+                    size="larg"
+                    sx={{
+                      marginRight: "10px",
+                      color: "red",
+                      cursor: "pointer",
+                    }}
+                  />
+                  <CircleIcon
+                    size="larg"
+                    sx={{
+                      marginRight: "10px",
+                      color: "blue",
+                      cursor: "pointer",
+                    }}
+                  />
+                  <CircleIcon
+                    size="larg"
+                    sx={{
+                      marginRight: "10px",
+                      color: "green",
+                      cursor: "pointer",
+                    }}
+                  />
+                  <CircleIcon
+                    size="larg"
+                    sx={{
+                      marginRight: "10px",
+                      color: "yellow",
+                      cursor: "pointer",
+                    }}
+                  />
                 </Grid>
                 <Stack style={
                   {
@@ -196,14 +241,13 @@ export default function ProdactId() {
                   }
                 }>
                   <Typography variant="h6" gutterBottom>
-                    h6. Heading:
+                    Description
                   </Typography>
                   <Typography variant="subtitle1" gutterBottom>
                     subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
                     blanditiis tenetur subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
                     blanditiis tenetur subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                    blanditiis tenetur subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                    blanditiis tenetur
+                    blanditiis tenetur subtitle1.
                   </Typography>
                 </Stack>
                 <Grid container>
@@ -211,26 +255,43 @@ export default function ProdactId() {
                     <Button variant="contained" style={{
                       marginRight: "10px",
                     }}>
-                      3400 $
+                      order now
                     </Button>
                   </Grid>
                   <Grid>
-                    <Button variant="contained" style={{
+                    <Button variant="contained"
+                    startIcon={<LocalGroceryStoreOutlinedIcon />}
+                    style={{
                       backgroundColor: "#272727",
                       marginRight: "10px",
-                    }}>
+                    }}
+                    onClick={handleClick}
+                    >
                       Add to cart
                     </Button>
+                    <Snackbar
+                      open={open}
+                      autoHideDuration={6000}
+                      onClose={handleClose}
+                      message="Added to cart"
+                      action={
+                        <BeenhereIcon 
+                          sx={{
+                            color: "green",
+                          }}
+                        />
+                      }
+                    />
                   </Grid>
                 </Grid>
             </Stack>
           </Grid>
         </Grid>
       </Box>
-      <Stack 
+      <Stack
           sx={ { 
             marginBottom: "20px",
-          } }
+          }}
         >
           <Typography variant="h6" gutterBottom 
             sx={{ 
@@ -316,11 +377,11 @@ export default function ProdactId() {
           <Button variant="contained" style={{
               width: "fit-content",
             }}>
-              3400 $
+              submit
           </Button>
       </Stack>
       <Stack sx={{
-        marginBottom: "60px",
+        marginBottom: "20px",
       }}>
           {
             Array.from(Array(6)).map((items, index) => {
@@ -367,6 +428,7 @@ export default function ProdactId() {
             />
           </div>
       </Stack>
-  </Container>
+    </Container>
+  </Stack>
   );
 };

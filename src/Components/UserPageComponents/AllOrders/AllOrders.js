@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import { Container } from "@mui/system";
 import { Grid, Stack, Typography } from "@mui/material";
-
+import CircleIcon from '@mui/icons-material/Circle';
 
 export default function AllOrders() {
 
@@ -15,7 +15,7 @@ export default function AllOrders() {
           margin: "20px 0px",
         }}
       >
-        hello: amine messeiyah
+        All Orders
       </Typography>
       
       {
@@ -25,11 +25,11 @@ export default function AllOrders() {
               <Card sx={{ marginBottom: "20px", }}>
                 <Typography noWrap variant="subtitle1" gutterBottom
                   sx={{
-                    padding: '10px 20px',
+                    padding: '10px 16px',
                     margin: "0px",
                   }}
                 >
-                  Request No. #234556
+                  Request No. #{ index + 24 }
                 </Typography>
                 <Card sx={{
                   display: { sx: "block", sm: "flex", } ,
@@ -43,12 +43,12 @@ export default function AllOrders() {
                     sx={{
                       maxWidth: "160px",
                       margin: "0 auto",
-                      padding: "20px",
+                      padding: "16px",
                     }}
                   />
                   <Stack sx={{ 
                       flexGrow: 1,
-                      padding: "20px",
+                      padding: "16px",
                     }}>
                     <Typography gutterBottom variant="h5" component="div">
                       Lizard
@@ -63,9 +63,14 @@ export default function AllOrders() {
                       fontWeight: "600",
                       }}>1.5</span>
                     </Typography>
+                    <CircleIcon
+                      sx={{
+                        marginBottom: "7px",
+                      }}
+                    />
                     <div>
                       <div>
-                        <div className="mb-3 xl:w-96 flex items-center space-x-2">
+                        <div className=" xl:w-96 flex items-center space-x-2">
                           <label
                             htmlFor="exampleFormControlInput1"
                             className="form-label inline-block text-gray-700"
@@ -76,6 +81,7 @@ export default function AllOrders() {
                           style={{
                             width: "100%",
                           }}
+                            disabled
                             type="number"
                             className="
                                   form-control
@@ -94,7 +100,8 @@ export default function AllOrders() {
                                   focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                                 "
                             id="exampleFormControlInput1"
-                            placeholder="Example label"
+                            placeholder=""
+                            defaultValue={1}
                           />
                         </div>
                       </div>
@@ -104,7 +111,7 @@ export default function AllOrders() {
                 <Grid container spacing={0} sx={{ justifyContent: "space-between",}}>
                   <Typography noWrap variant="subtitle1" gutterBottom
                     sx={{
-                      padding: '0px 20px 10px',
+                      padding: '0px 16px 10px',
                       margin: "0px",
                     }}
                   >
@@ -117,7 +124,7 @@ export default function AllOrders() {
                   </Typography>
                   <Typography noWrap variant="subtitle1" gutterBottom
                     sx={{
-                      padding: '0px 20px 10px',
+                      padding: '0px 16px 10px',
                       margin: "0px",
                     }}
                   >

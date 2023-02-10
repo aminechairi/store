@@ -2,7 +2,7 @@ import * as React from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import Button from '@mui/material/Button';
-import { Container, Stack, Typography } from '@mui/material';
+import { Container, Grid, Stack, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -11,7 +11,8 @@ import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
-import Prodacts from "../../Components/Prodacts/Prodacts";
+import CardProdacts from '../CardProdacts/CardProdacts';
+import Pagination from '@mui/material/Pagination';
 
 export default function ProdactsDetails() {
 
@@ -83,10 +84,22 @@ export default function ProdactsDetails() {
       <MenuItem>
         <p>Notifications</p>
       </MenuItem>
+      <MenuItem 
+        onClick={() => {
+          handleClickOpen()
+        }}
+        sx={{
+          display: {
+            md: "none",
+          },
+        }}
+      >
+        <p>Filteration</p>
+      </MenuItem>      
     </Menu>
   );
 
-
+  // open alert filteration
   const [open, setOpen] = React.useState(false);
   const [fullWidth] = React.useState(true);
   const [maxWidth] = React.useState('sm');
@@ -99,16 +112,16 @@ export default function ProdactsDetails() {
     setOpen(false);
   };
 
-  return (
-    <Container fixed>
-      <Stack>
-        <Stack spacing={2} direction="row" 
-          style={{
-            margin: "20px 0px",
-          }}
-        >
+  // filterations
+  const Filter = (
+      <div className='fleters'>
+
+        <div style={{
+          marginBottom: "10px",
+        }}>
+
           <Typography
-              variant="h5"
+              variant="h6"
               noWrap
               component="div"
               style={{
@@ -116,188 +129,246 @@ export default function ProdactsDetails() {
                 fontWeight: "600",
               }}
             >
-              6 products available
+              Categores
           </Typography>
-          <Button 
-            variant="contained" 
-            startIcon={<MenuIcon />}
-            onClick={handleMobileMenuOpen} 
-            style={{
-              backgroundColor: "#272727",
-              whiteSpace: "nowrap",
-              minWidth: "119.75px",
-            }}>
-            sort by
-          </Button>
-        </Stack>
-        {renderMobileMenu}
-        {renderMenu}      
-      </Stack>
+          <FormGroup>
+            <FormControlLabel control={<Checkbox />} label="Label" />
+            <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
+            <FormControlLabel control={<Checkbox />} label="Label" />
+            <FormControlLabel control={<Checkbox />} label="Label" />
+            <FormControlLabel control={<Checkbox />} label="Label" />
+          </FormGroup>
 
-      <React.Fragment>
-        <Button  onClick={handleClickOpen}
-          variant="contained" 
-          startIcon={<MenuIcon />}
-          style={{
-            backgroundColor: "#272727",
-            whiteSpace: "nowrap",
-            minWidth: "119.75px",
-          }}>
-          Filtration
-        </Button>
-        <Dialog
-          fullWidth={fullWidth}
-          maxWidth={maxWidth}
-          open={open}
-          onClose={handleClose}
-        >
-          <DialogTitle>Optional sizes</DialogTitle>
-          <DialogContent>
+        </div>
 
-            <div className='fleters'>
+        <div style={{
+          marginBottom: "10px",
+        }}>
 
-              <div>
-
-                <Typography
-                    variant="h6"
-                    noWrap
-                    component="div"
-                    style={{
-                      margin: "0 auto 0 0",
-                      fontWeight: "600",
-                    }}
-                  >
-                    categores
-                </Typography>
-                <FormGroup>
-                  <FormControlLabel control={<Checkbox />} label="Label" />
-                  <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
-                  <FormControlLabel control={<Checkbox />} label="Label" />
-                  <FormControlLabel control={<Checkbox />} label="Label" />
-                  <FormControlLabel control={<Checkbox />} label="Label" />
-                </FormGroup>
-
-              </div>
-
-              <div>
-
-                <Typography
-                    variant="h6"
-                    noWrap
-                    component="div"
-                    style={{
-                      margin: "0 auto 0 0",
-                      fontWeight: "600",
-                    }}
-                  >
-                    categores
-                </Typography>
-                <FormGroup>
-                  <FormControlLabel control={<Checkbox />} label="Label" />
-                  <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
-                  <FormControlLabel control={<Checkbox />} label="Label" />
-                </FormGroup>
-
-              </div>
-
-              <div>
-                
-                <Typography
-                    variant="h6"
-                    noWrap
-                    component="div"
-                    style={{
-                      margin: "0 auto 0 0",
-                      fontWeight: "600",
-                    }}
-                  >
-                    categores
-                </Typography>
-                <div>
-                  <div className="mb-3 xl:w-96">
-                    <label
-                      htmlFor="exampleFormControlInput1"
-                      className="form-label inline-block mb-2 text-gray-700"
-                    >
-                      Example label
-                    </label>
-                    <input
-                      type="number"
-                      className="
-                            form-control
-                            block
-                            px-3
-                            py-1.5
-                            text-base
-                            font-normal
-                            text-gray-700
-                            bg-white bg-clip-padding
-                            border border-solid border-gray-300
-                            rounded
-                            transition
-                            ease-in-out
-                            m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-                          "
-                      id="exampleFormControlInput1"
-                      placeholder="Example label"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <div className="mb-3 xl:w-96">
-                    <label
-                      htmlFor="exampleFormControlInput1"
-                      className="form-label inline-block mb-2 text-gray-700"
-                    >
-                      Example label
-                    </label>
-                    <input
-                      type="number"
-                      className="
-                            form-control
-                            block
-                            px-3
-                            py-1.5
-                            text-base
-                            font-normal
-                            text-gray-700
-                            bg-white bg-clip-padding
-                            border border-solid border-gray-300
-                            rounded
-                            transition
-                            ease-in-out
-                            m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-                          "
-                      id="exampleFormControlInput1"
-                      placeholder="Example label"
-                    />
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-
-          </DialogContent>
-          <DialogActions>
-            <Button
-              variant="contained" 
+          <Typography
+              variant="h6"
+              noWrap
+              component="div"
               style={{
-                backgroundColor: "#272727",
+                margin: "0 auto 0 0",
+                fontWeight: "600",
               }}
-            onClick={handleClose}>Close</Button>
-          </DialogActions>
-        </Dialog>
-      </React.Fragment>
+            >
+              Categores
+          </Typography>
+          <FormGroup>
+            <FormControlLabel control={<Checkbox />} label="Label" />
+            <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
+            <FormControlLabel control={<Checkbox />} label="Label" />
+          </FormGroup>
 
-      <Prodacts 
-        nameTitle="..."
-        bottonTitleStatue={ false }
-        displayNumber={ 8 }
-        pagination={ true } />
+        </div>
 
-    </Container>
+        <div style={{
+          marginBottom: "1px",
+        }}>
+          
+          <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              style={{
+                margin: "0 auto 0 0",
+                fontWeight: "600",
+                marginBottom: "7px",
+              }}
+            >
+              The price
+          </Typography>
+          <div>
+            <div className="mb-3">
+              <label
+                htmlFor="exampleFormControlInput1"
+                className="form-label inline-block mb-2 text-gray-700"
+              >
+                Price from
+              </label>
+              <input
+                style={{
+                  width: "calc(100% - 10px)",
+                }}
+                type="number"
+                className="
+                      form-control
+                      block
+                      px-3
+                      py-1.5
+                      text-base
+                      font-normal
+                      text-gray-700
+                      bg-white bg-clip-padding
+                      border border-solid border-gray-300
+                      rounded
+                      transition
+                      ease-in-out
+                      m-0
+                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                    "
+                id="exampleFormControlInput1"
+                placeholder="Price from"
+              />
+            </div>
+          </div>
+          <div>
+            <div className="mb-3">
+              <label
+                htmlFor="exampleFormControlInput1"
+                className="form-label inline-block mb-2 text-gray-700"
+              >
+                Price to
+              </label>
+              <input
+                style={{
+                  width: "calc(100% - 10px)",
+                }}
+                type="number"
+                className="
+                      form-control
+                      block
+                      px-3
+                      py-1.5
+                      text-base
+                      font-normal
+                      text-gray-700
+                      bg-white bg-clip-padding
+                      border border-solid border-gray-300
+                      rounded
+                      transition
+                      ease-in-out
+                      m-0
+                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                    "
+                id="exampleFormControlInput1"
+                placeholder="Price to"
+              />
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    );
+
+  // pagination
+  const [page, setPage] = React.useState(1);
+  const handleChange = (event, value) => {
+    setPage(value);
+    console.log(
+      page
+    );
+  };
+
+  return (
+    <Stack
+      sx={{
+        backgroundColor: "#f7f7f7",
+      }}
+    >
+      <Container fixed>
+        <Stack>
+          <Stack spacing={2} direction="row" 
+            style={{
+              margin: "20px 0px",
+            }}
+          >
+            <Typography
+                variant="h5"
+                noWrap
+                component="div"
+                style={{
+                  margin: "0 auto 0 0",
+                  fontWeight: "600",
+                }}
+              >
+                6 products available
+            </Typography>
+            <MenuIcon 
+              onClick={handleMobileMenuOpen}
+              sx={{
+                width: "fit-content",
+                height: "32.02px",
+              }}
+            />
+          </Stack>
+          {renderMobileMenu}
+          {renderMenu}      
+        </Stack>
+        <React.Fragment>
+          <Dialog
+            fullWidth={fullWidth}
+            maxWidth={maxWidth}
+            open={open}
+            onClose={handleClose}
+          >
+            <DialogTitle>Filteration</DialogTitle>
+            <DialogContent>
+              {
+                Filter
+              }
+            </DialogContent>
+            <DialogActions>
+              <Button
+                onClick={handleClose}
+                sx={{
+                  color: "#272727",
+                }}
+                >
+                Close
+              </Button>
+            </DialogActions>
+          </Dialog>
+        </React.Fragment>
+      <Grid container>
+        <Grid item md={3} lg={2} 
+          sx={{
+            display: {
+              xs: "none",
+              md: "block",
+            },
+          }}
+        >
+          {
+            Filter
+          }
+        </Grid>
+        <Grid item md={9} lg={10}>
+          <Grid 
+            container 
+            spacing={3} 
+          >
+            {
+              Array.from(Array(8)).map((_, i) => {
+                return (
+                  <Grid key={i + 1} item xs={12} sm={6} md={6} lg={3}>
+                    <CardProdacts />
+                  </Grid>
+                )
+              })
+            }
+          </Grid>
+          <div style={{
+              margin: "40px 0px",
+              display: "flex",
+              justifyContent: "center", 
+            }}>
+            <Pagination 
+              count={12} 
+              defaultPage={1} 
+              siblingCount={0}
+              onChange={handleChange} 
+              shape="rounded"  
+              // variant="outlined" 
+              color="primary" 
+            />
+          </div>
+        </Grid>
+      </Grid>
+      </Container>
+    </Stack>
   );
 };

@@ -107,32 +107,32 @@ export default function UserPage() {
             <List>
               {[
                 {
-                  Text: 'Manage orders',
+                  Text: 'All orders',
                   Icon: <ManageAccountsIcon />,
                   Path: "/user",
                 },
                 {
-                  Text: 'Cart',
+                  Text: 'Shoping cart',
                   Icon: <LocalGroceryStoreOutlinedIcon />,
                   Path: "cart",
                 },                
                 {
-                  Text: 'Favorite list',
+                  Text: 'Favorite prodacts',
                   Icon: <BookmarksIcon />,
                   Path: "favorite",
                 },
                 {
-                  Text: 'Personal address',
+                  Text: 'Address book',
                   Icon: <ContactMailIcon />,
                   Path: "address",
                 },
                 {
                   Text: 'Profile personly',
                   Icon: <AccountCircleIcon />,
-                  Path: "user-profile",
+                  Path: "profile",
                 },
-                ].map((items, index) => (
                 
+                ].map((items, index) => (
                 <Link to={items.Path} key={items.Text} 
                 onClick={handleDrawerClose}>
                   <ListItem disablePadding sx={{ display: 'block' }}>
@@ -175,11 +175,13 @@ export default function UserPage() {
         </Stack>
       </Box>
       <Stack sx={{
+        display: "block", 
         position: "absolute",
         top: "0",
         left: "56px",
         width: "calc( 100% - 56px )",
-        backgroundColor: "#fff",
+        minHeight: "calc(100vh)",
+        backgroundColor: "#f7f7f7",
       }}>
         <NavBar />
         <Outlet />

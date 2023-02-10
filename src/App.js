@@ -10,10 +10,13 @@ import UserPage from "./pages/UserPage/UserPage";
 import AllOrders from "./Components/UserPageComponents/AllOrders/AllOrders";
 import Favorite from "./Components/UserPageComponents/Favorite/Favorite";
 import Address from "./Components/UserPageComponents/Address/Address";
-import UserProfile from "./Components/UserPageComponents/UserProfile/UserProfile";
 import Cart from "./Components/UserPageComponents/Cart/Cart";
+import Profile from "./Components/UserPageComponents/Profile/Profile";
 
 function App() {
+
+  // api
+  // https://balajidharma.medium.com/free-store-api-for-developers-to-practice-front-end-e-commerce-development-fcf5b75e4982
 
   return (
     <>
@@ -28,10 +31,10 @@ function App() {
         <Route path="/register" element={ <RegisterPage /> } />
         <Route path="/user" element={<UserPage />}>
           <Route index element={<AllOrders />} />
+          <Route path="cart" element={<Cart />} />
           <Route path="favorite" element={<Favorite />} />
           <Route path="address" element={<Address />} />
-          <Route path="user-profile" element={<UserProfile />} />
-          <Route path="cart" element={<Cart />} />
+          <Route path="profile" element={<Profile />} />
         </Route>
       </Routes>
     </BrowserRouter>
