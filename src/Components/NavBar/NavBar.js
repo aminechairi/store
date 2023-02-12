@@ -58,11 +58,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+const auth =true;
+
+
 export default function PrimarySearchAppBar() {
 
   // auth
   const [auth, setAuth] = React.useState(true);
-
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -105,11 +107,19 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
       <Link to="/user">
-        <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+        <MenuItem onClick={handleMenuClose}>My Account</MenuItem>
       </Link>
       <Link to="/user/profile">
         <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       </Link>
+      <MenuItem 
+        onClick={() => {
+          handleMenuClose();
+          setAuth(!auth);
+        }}
+      >
+        Log Out
+      </MenuItem>
     </Menu>
   );
 
@@ -154,7 +164,7 @@ export default function PrimarySearchAppBar() {
               <LocalGroceryStoreOutlinedIcon />
             </Badge>
           </IconButton>
-          <p>shopping cart</p>
+          <p>Shopping Cart</p>
         </MenuItem>      
       </Link>
     </Menu>
@@ -208,14 +218,11 @@ export default function PrimarySearchAppBar() {
           </Link>
           </IconButton>
           <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
-            onClick={() => {
-              setAuth(!auth);
-            }}
-          >
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ display: { xs: 'none', sm: 'block' } }}
+            >
             BALL
           </Typography>
           <Search>
@@ -254,7 +261,7 @@ export default function PrimarySearchAppBar() {
                 <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                   <Link to="/login">
                     <Button 
-                      variant="outlined"
+                      variant="inherit"
                       sx={{ color: "#fff", }}
                       style={{
                         textTransform: "none",

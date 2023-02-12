@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Tabs, { tabsClasses } from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import { Container } from '@mui/material';
+import { Container } from '@mui/material'
 
 export default function ScrollableTabsButtonVisible() {
   const [value, setValue] = React.useState(0);
@@ -33,31 +33,31 @@ export default function ScrollableTabsButtonVisible() {
               color: "#fff"
             }}
           >
-            <Tab label="Item One" sx={ { 
+            <Tab label="all" sx={ { 
+              color: "#fff",
+                '&:hover': {
+                backgroundColor: '#606060',
+              },
+            } } />            
+            <Tab label="electronec" sx={ { 
               color: "#fff",
                 '&:hover': {
                 backgroundColor: '#606060',
               },
             } } />
-            <Tab label="Item Two" sx={ { 
+            <Tab label="clothes" sx={ { 
               color: "#fff",
                 '&:hover': {
                 backgroundColor: '#606060',
               },
             } } />
-            <Tab label="Item Three" sx={ { 
+            <Tab label="gaming" sx={ { 
               color: "#fff",
                 '&:hover': {
                 backgroundColor: '#606060',
               },
             } } />
-            <Tab label="Item Four" sx={ { 
-              color: "#fff",
-                '&:hover': {
-                backgroundColor: '#606060',
-              },
-            } } />
-            <Tab label="Item Five" sx={ { 
+            <Tab label="music" sx={ { 
               color: "#fff",
                 '&:hover': {
                 backgroundColor: '#606060',
@@ -80,4 +80,4 @@ export default function ScrollableTabsButtonVisible() {
       </Container>
     </div>
   );
-}
+};

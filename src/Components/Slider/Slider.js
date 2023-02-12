@@ -1,5 +1,9 @@
 import "./Slider.css";
 import Typography from '@mui/material/Typography';
+import { Grid } from "@mui/material";
+import Button from '@mui/material/Button';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Link } from "react-router-dom";
 
 export default function Slider() {
   return (
@@ -34,39 +38,96 @@ export default function Slider() {
         <div className="carousel-item active float-left w-full">
           <div className="slider-content"
           style={{
-            backgroundImage: `url("${ require("../../images/slider1.png") }")`,
-            backgroundColor: "#deb9dc",
+            backgroundImage: `url("${ require("../../images/electronect prodzcts.jpg") }")`,
+            backgroundColor: "",
           }}>
             <div className="bg">
-              <Typography variant="h4" component="h2">
-                Up to 30%
+            <Grid>
+              <Typography variant="h4" component="h2"
+                sx={{
+                  marginBottom: "40px",
+                }}
+              >
+                Discounts up to 30%
               </Typography>
+              <Link to="/prodacts">
+                <Button 
+                  endIcon={ <ArrowForwardIcon /> }
+                  variant="outlined"
+                  style={{
+                    color: "#fff",
+                    borderColor: "#fff",
+                    textTransform: "none",
+                  }}
+                >
+                  Shoping Electronec
+                </Button>
+                </Link>
+            </Grid>
             </div>
           </div>
         </div>
         <div className="carousel-item float-left w-full">
           <div className="slider-content"
           style={{
-            backgroundImage: `url("${ require("../../images/slider4.png") }")`,
-            backgroundColor: "rgb(27 55 112)",
+            backgroundImage: `url("${ require("../../images/clothes prodacts.jpg") }")`,
+            backgroundColor: "",
           }}>
             <div className="bg">
-              <Typography variant="h4" component="h2">
-                Up to 30% 
+            <Grid>
+              <Typography variant="h4" component="h2"
+                sx={{
+                  marginBottom: "40px",
+                }}
+              >
+                Discounts up to 30%
               </Typography>
+              <Link to="/prodacts">
+                <Button 
+                    endIcon={ <ArrowForwardIcon /> }
+                    variant="outlined"
+                    style={{
+                      color: "#fff",
+                      borderColor: "#fff",
+                      textTransform: "none",
+                    }}
+                  >
+                    Shoping clothes
+                  </Button>
+                </Link>
+            </Grid>
             </div>
           </div>
         </div>
         <div className="carousel-item float-left w-full">
           <div className="slider-content"
           style={{
-            backgroundImage: `url("${ require("../../images/prod4.png") }")`,
-            backgroundColor: "rgb(233 95 98)",
+            backgroundImage: `url("${ require("../../images/gaming prodacts.jpg") }")`,
+            backgroundColor: "",
           }}>
             <div className="bg">
-              <Typography variant="h4" component="h2">
-                Up to 30% 
+            <Grid>
+              <Typography variant="h4" component="h2"
+                sx={{
+                  marginBottom: "40px",
+                }}
+              >
+                Discounts up to 30%
               </Typography>
+              <Link to="/prodacts">
+                <Button 
+                    endIcon={ <ArrowForwardIcon /> }
+                    variant="outlined"
+                    style={{
+                      color: "#fff",
+                      borderColor: "#fff",
+                      textTransform: "none",
+                    }}
+                  >
+                    Shoping gaming prodacts
+                  </Button>
+                </Link>
+            </Grid>
             </div>
           </div>
         </div>
@@ -97,4 +158,4 @@ export default function Slider() {
       </button>
     </div>
   );
-}
+};

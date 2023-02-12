@@ -9,7 +9,7 @@ export default function AllBrands() {
       <TheMostFamousBrands 
         nameTitle="The Most Famous Brands"
         bottonStatue={ false }
-        displayNumber={ 16 }
+        displayNumber={ 12 }
         pagination={ true } />
         <Footer />
     </>

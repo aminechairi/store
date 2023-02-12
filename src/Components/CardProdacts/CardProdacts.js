@@ -76,11 +76,10 @@ export default function CardProdacts() {
               }}
           >
             <Typography gutterBottom variant="h5" component="div">
-              Lizard
+              Title prodact
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over 6,000
-              species, ranging across all continents except Antarctica
+              The iPhone 14 comes with 6.1-inch OLED display and Apple's improved Bionic A15 processor. On the back there is a Dual camera setup with 12MP main camera and 12MP Ultra-wide sensor. Prices start from 799$.
             </Typography>
           </CardContent>
           <Box

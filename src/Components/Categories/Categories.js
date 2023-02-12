@@ -63,7 +63,12 @@ export default function ResponsiveGrid( props ) {
             columns={{ xs: 12, sm: 12, md: 12, lg: 12, }}>
               {Array.from(Array( props.displayNumber )).map((_, index) => (
                 <Grid item xs={12} sm={6} md={3} lg={2} key={index}>
-                  <ActionAreaCard />
+                  <Link to="/prodacts" onClick={() => {
+                      document.documentElement.scrollTop = 0;
+                    }}
+                  >
+                    <ActionAreaCard />
+                  </Link>
                 </Grid>
               ))}
             </Grid>

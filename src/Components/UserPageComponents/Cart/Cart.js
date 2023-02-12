@@ -144,7 +144,7 @@ export default function Cart() {
                           Lizard
                         </Typography>
                         <Typography sx={{
-                          width: { md: 400, },
+                          width: { lg: 600, },
                         }} variant="subtitle1" gutterBottom>
                           subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
                           blanditiis tenetur subtitle1. ipsum dolor &nbsp; 

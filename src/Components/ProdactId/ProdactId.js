@@ -160,9 +160,6 @@ export default function ProdactId() {
                   <Typography variant="h5" gutterBottom>
                     Aphone 14
                   </Typography>
-                  <Typography variant="h6" gutterBottom>
-                    3600.00 $
-                  </Typography>
                   <Typography
                     variant="subtitle1" 
                     gutterBottom
@@ -170,32 +167,30 @@ export default function ProdactId() {
                       margin: "0px",
                     }}
                   >
-                    subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                    blanditiis tenetur &nbsp; 
-
+                    Phone 14, iPhone 14 Plus Get Up to Rs. 43,000 Discount; Available on Limited Time Offer&nbsp; 
                     <span 
                       style={{ 
                       color: "#faaf00",
                       fontWeight: "600",
                       }}
                     >
-                      1.5
+                      4.5
                     </span>
-
                   </Typography>
                 </Stack>
                 <Grid container>
-                  <Grid>
                     <Typography variant="h6" gutterBottom>
                       brand:
                     </Typography>
-                  </Grid>
-                  <Grid>
-                    <Typography variant="h6" gutterBottom 
-                    style={{ fontWeight: "700", }}>
-                      &nbsp; name brand
+                    <Typography 
+                      variant="h6" 
+                      gutterBottom
+                        style={{ 
+                          fontWeight: "700",
+                        }}
+                      >
+                      &nbsp; Apople
                     </Typography>
-                  </Grid>
                 </Grid>
                 <Grid container style={
                   {
@@ -248,6 +243,19 @@ export default function ProdactId() {
                     blanditiis tenetur subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
                     blanditiis tenetur subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
                     blanditiis tenetur subtitle1.
+                  </Typography>
+                </Stack>
+                <Stack 
+                  sx={{
+                    marginBottom: "20px",
+                  }}
+                >
+                  <Typography variant="h6" gutterBottom
+                    sx={{
+                      fontWeight: "700",
+                    }}
+                  >
+                    3600.00 $
                   </Typography>
                 </Stack>
                 <Grid container>
@@ -334,7 +342,7 @@ export default function ProdactId() {
             <Rating
               name="hover-feedback"
               value={value}
-              precision={1}
+              precision={0.5}
               getLabelText={getLabelText}
               onChange={(event, newValue) => {
                 setValue(newValue);

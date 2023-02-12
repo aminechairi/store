@@ -12,10 +12,10 @@ export default function ActionAreaCard() {
             style={{
               margin: "0px auto",              
             }}
-            src='https://th.bing.com/th/id/R.ffb66335dcc6e51ab5a96d15b0618ca7?rik=k1cmzKYYoFbjqA&pid=ImgRaw&r=0' alt='' />
+            src='https://cdn1.productnation.co/stg/sites/1/5e267c2f8d8b9.jpeg' alt='' />
           <CardContent>
             <Typography style={{textAlign: "center",}} gutterBottom variant="h5" component="div">
-              Lizard
+              Name Categorie
             </Typography>
           </CardContent>
         </CardActionArea>

@@ -73,16 +73,16 @@ export default function ProdactsDetails() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <p>Messages</p>
+        <p>Best Sellers</p>
       </MenuItem>
       <MenuItem>
-        <p>Notifications</p>
+        <p>Most Rated</p>
       </MenuItem>
       <MenuItem>
-        <p>Messages</p>
+        <p>From Most Expensive To Cheapest</p>
       </MenuItem>
       <MenuItem>
-        <p>Notifications</p>
+        <p>From Cheapest To Most Expensive</p>
       </MenuItem>
       <MenuItem 
         onClick={() => {
@@ -99,7 +99,6 @@ export default function ProdactsDetails() {
     </Menu>
   );
 
-  // open alert filteration
   const [open, setOpen] = React.useState(false);
   const [fullWidth] = React.useState(true);
   const [maxWidth] = React.useState('sm');
@@ -112,14 +111,33 @@ export default function ProdactsDetails() {
     setOpen(false);
   };
 
-  // filterations
   const Filter = (
       <div className='fleters'>
-
         <div style={{
           marginBottom: "10px",
         }}>
-
+          <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              style={{
+                margin: "0 auto 0 0",
+                fontWeight: "600",
+              }}
+            >
+              Brand
+          </Typography>
+          <FormGroup>
+            <FormControlLabel control={<Checkbox />} label="Name Brand 1" />
+            <FormControlLabel control={<Checkbox defaultChecked />} label="Name Brand 2" />
+            <FormControlLabel control={<Checkbox />} label="Name Brand 3" />
+            <FormControlLabel control={<Checkbox />} label="Name Brand 4" />
+            <FormControlLabel control={<Checkbox />} label="Name Brand 5" />
+          </FormGroup>
+        </div>
+        <div style={{
+          marginBottom: "10px",
+        }}>
           <Typography
               variant="h6"
               noWrap
@@ -132,42 +150,14 @@ export default function ProdactsDetails() {
               Categores
           </Typography>
           <FormGroup>
-            <FormControlLabel control={<Checkbox />} label="Label" />
-            <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
-            <FormControlLabel control={<Checkbox />} label="Label" />
-            <FormControlLabel control={<Checkbox />} label="Label" />
-            <FormControlLabel control={<Checkbox />} label="Label" />
+            <FormControlLabel control={<Checkbox />} label="Name Categore" />
+            <FormControlLabel control={<Checkbox defaultChecked />} label="Name Categore" />
+            <FormControlLabel control={<Checkbox />} label="Name Categore" />
           </FormGroup>
-
         </div>
-
-        <div style={{
-          marginBottom: "10px",
-        }}>
-
-          <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              style={{
-                margin: "0 auto 0 0",
-                fontWeight: "600",
-              }}
-            >
-              Categores
-          </Typography>
-          <FormGroup>
-            <FormControlLabel control={<Checkbox />} label="Label" />
-            <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
-            <FormControlLabel control={<Checkbox />} label="Label" />
-          </FormGroup>
-
-        </div>
-
         <div style={{
           marginBottom: "1px",
         }}>
-          
           <Typography
               variant="h6"
               noWrap
@@ -248,13 +238,10 @@ export default function ProdactsDetails() {
               />
             </div>
           </div>
-
         </div>
-
       </div>
     );
 
-  // pagination
   const [page, setPage] = React.useState(1);
   const handleChange = (event, value) => {
     setPage(value);
@@ -269,6 +256,23 @@ export default function ProdactsDetails() {
         backgroundColor: "#f7f7f7",
       }}
     >
+        <div
+          style={{
+            width: "100%",
+            height: "100px",
+            backgroundImage: `url("${ require("../../images/electronect prodzcts.jpg") }")`,
+            backgroundSize: "cover",
+            backgroundAttachment: "fixed",
+          }}
+        >
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              backgroundColor: "rgba(46, 44, 44, 0.774)",
+            }}
+          ></div>
+        </div>
       <Container fixed>
         <Stack>
           <Stack spacing={2} direction="row" 
@@ -285,7 +289,7 @@ export default function ProdactsDetails() {
                   fontWeight: "600",
                 }}
               >
-                6 products available
+                Products available
             </Typography>
             <MenuIcon 
               onClick={handleMobileMenuOpen}
@@ -314,60 +318,60 @@ export default function ProdactsDetails() {
             <DialogActions>
               <Button
                 onClick={handleClose}
-                sx={{
-                  color: "#272727",
-                }}
+                  sx={{
+                    color: "#272727",
+                  }}
                 >
                 Close
               </Button>
             </DialogActions>
           </Dialog>
         </React.Fragment>
-      <Grid container>
-        <Grid item md={3} lg={2} 
-          sx={{
-            display: {
-              xs: "none",
-              md: "block",
-            },
-          }}
-        >
-          {
-            Filter
-          }
-        </Grid>
-        <Grid item md={9} lg={10}>
-          <Grid 
-            container 
-            spacing={3} 
+        <Grid container>
+          <Grid item md={3} lg={2} 
+            sx={{
+              display: {
+                xs: "none",
+                md: "block",
+              },
+            }}
           >
             {
-              Array.from(Array(8)).map((_, i) => {
-                return (
-                  <Grid key={i + 1} item xs={12} sm={6} md={6} lg={3}>
-                    <CardProdacts />
-                  </Grid>
-                )
-              })
+              Filter
             }
           </Grid>
-          <div style={{
-              margin: "40px 0px",
-              display: "flex",
-              justifyContent: "center", 
-            }}>
-            <Pagination 
-              count={12} 
-              defaultPage={1} 
-              siblingCount={0}
-              onChange={handleChange} 
-              shape="rounded"  
-              // variant="outlined" 
-              color="primary" 
-            />
-          </div>
+          <Grid item md={9} lg={10}>
+            <Grid 
+              container 
+              spacing={3} 
+            >
+              {
+                Array.from(Array(8)).map((_, i) => {
+                  return (
+                    <Grid key={i + 1} item xs={12} sm={6} md={6} lg={4}>
+                      <CardProdacts />
+                    </Grid>
+                  )
+                })
+              }
+            </Grid>
+            <div style={{
+                margin: "40px 0px",
+                display: "flex",
+                justifyContent: "center", 
+              }}>
+              <Pagination 
+                count={12} 
+                defaultPage={1} 
+                siblingCount={0}
+                onChange={handleChange} 
+                shape="rounded"  
+                // variant="outlined" 
+                color="primary" 
+              />
+            </div>
+          </Grid>
         </Grid>
-      </Grid>
       </Container>
     </Stack>
   );

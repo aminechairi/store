@@ -5,6 +5,7 @@ import Prodacts from "../../Components/Prodacts/Prodacts";
 import CutBacks from "../../Components/CutBacks/CutBacks";
 import TheMostFamousBrands from "../../Components/TheMostFamousBrands/TheMostFamousBrands";
 import Footer from "../../Components/Footer/Footer";
+import PaymentMethods from "../../Components/PaymentMethods/PaymentMethods";
 
 export default function HomePage() {
   return (
@@ -28,7 +29,7 @@ export default function HomePage() {
       pagination={ false }/>
 
       <CutBacks />
-
+      
       <Prodacts 
       nameTitle="Latest Fashion"
       bottonStatue={ true }
@@ -41,6 +42,8 @@ export default function HomePage() {
         bottonStatue={ true }
         displayNumber={ 8 }
         pagination={ false } />
+
+      <PaymentMethods />
 
       <Footer />
 
