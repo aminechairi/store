@@ -15,11 +15,7 @@ import Profile from "./Components/UserPageComponents/Profile/Profile";
 
 function App() {
 
-  // api
-  // https://balajidharma.medium.com/free-store-api-for-developers-to-practice-front-end-e-commerce-development-fcf5b75e4982
-
   return (
-    <>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={ <HomePage /> } />
@@ -38,7 +34,6 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-    </>
   );
 }
 

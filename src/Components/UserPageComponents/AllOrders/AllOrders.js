@@ -4,6 +4,7 @@ import CardMedia from '@mui/material/CardMedia';
 import { Container } from "@mui/system";
 import { Grid, Stack, Typography } from "@mui/material";
 import CircleIcon from '@mui/icons-material/Circle';
+import { Link } from 'react-router-dom';
 
 export default function AllOrders() {
 
@@ -29,16 +30,23 @@ export default function AllOrders() {
                     margin: "0px",
                   }}
                 >
-                  Request No. #{ index + 24 }
+                  Prodact No:{ index + 24 }
                 </Typography>
                 <Card sx={{
                   display: { sx: "block", sm: "flex", } ,
                   alignItems: "center",
                   boxShadow: 'none',
                 }}>
+                <Link
+                  to="/prodact/1" 
+                  key={index + 1 }
+                  onClick={() => {
+                    document.documentElement.scrollTop = 0;
+                  }}
+                >
                   <CardMedia
                     component="img"
-                    image={"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-14.jpg"}
+                    image={"https://th.bing.com/th/id/R.70ca5877e62bee713dbd467baa13e25f?rik=6JoHbmM0XJ5m8A&riu=http%3a%2f%2fprevexmarketing.com%2fwp-content%2fuploads%2f2021%2f06%2f8D174B5A-B870-4048-9A4F-D559DF737DCA-800x948.jpeg&ehk=c%2bjuUtQjMXr%2fGXUc%2bdKh7OjQCWdzTypNjozA65kILpc%3d&risl=&pid=ImgRaw&r=0"}
                     alt="green iguana"
                     sx={{
                       maxWidth: "160px",
@@ -46,22 +54,18 @@ export default function AllOrders() {
                       padding: "16px",
                     }}
                   />
+                </Link>
                   <Stack sx={{ 
                       flexGrow: 1,
                       padding: "16px",
                     }}>
                     <Typography gutterBottom variant="h5" component="div">
-                      Lizard
+                      Aplle 14
                     </Typography>
                     <Typography sx={{
-                      width: { md: 400, },
+                      width: { md: 600, },
                     }} variant="subtitle1" gutterBottom>
-                      subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                      blanditiis tenetur &nbsp; 
-                      <span style={{ 
-                      color: "#faaf00",
-                      fontWeight: "600",
-                      }}>1.5</span>
+                        subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur subtitle1.
                     </Typography>
                     <CircleIcon
                       sx={{

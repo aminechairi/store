@@ -12,10 +12,10 @@ export default function ActionAreaCard() {
             style={{
               margin: "0px auto",              
             }}
-            src='https://cdn1.productnation.co/stg/sites/1/5e267c2f8d8b9.jpeg' alt='' />
+            src='https://almali.store/wp-content/uploads/2021/09/530309-Product-1-I-637675024349392442_800x800-600x600.jpg' alt='' />
           <CardContent>
             <Typography style={{textAlign: "center",}} gutterBottom variant="h5" component="div">
-              Name Categorie
+              Categorie Name
             </Typography>
           </CardContent>
         </CardActionArea>

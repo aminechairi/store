@@ -46,7 +46,7 @@ export default function CardProdacts() {
           <CardMedia
             component="img"
             height="140"
-            image={require("../../images/item.png")}
+            image={"https://almali.store/wp-content/uploads/2021/09/530309-Product-1-I-637675024349392442_800x800-600x600.jpg"}
             alt="green iguana"
           />
         </Link>
@@ -76,10 +76,10 @@ export default function CardProdacts() {
               }}
           >
             <Typography gutterBottom variant="h5" component="div">
-              Title prodact
+              Aphone 14
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              The iPhone 14 comes with 6.1-inch OLED display and Apple's improved Bionic A15 processor. On the back there is a Dual camera setup with 12MP main camera and 12MP Ultra-wide sensor. Prices start from 799$.
+              subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur subtitle1.
             </Typography>
           </CardContent>
           <Box

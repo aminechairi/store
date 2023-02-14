@@ -72,7 +72,11 @@ export default function ProdactId() {
     <Container fixed>
       <Box sx={{ flexGrow: 1, margin: "20px 0px 20px", }}>
         <Grid container>
-          <Grid item xs={12} sm={12} md={4} lg={4}>
+          <Grid item xs={12} sm={12} md={4} lg={4} 
+            sx={{
+              backgroundColor: "#ffff",
+            }}
+          >
             <div
               id="carouselExampleControls"
               className="carousel slide relative shadow-lg p-4 carousel-dark"
@@ -82,8 +86,8 @@ export default function ProdactId() {
                 <div className="carousel-item active relative float-left w-full">
                   <div style={{
                     width: "100%",
-                    height: "460px",
-                    backgroundImage: `url(${"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13.jpg"})`,
+                    height: "500px",
+                    backgroundImage: `url(${"https://th.bing.com/th/id/R.70ca5877e62bee713dbd467baa13e25f?rik=6JoHbmM0XJ5m8A&riu=http%3a%2f%2fprevexmarketing.com%2fwp-content%2fuploads%2f2021%2f06%2f8D174B5A-B870-4048-9A4F-D559DF737DCA-800x948.jpeg&ehk=c%2bjuUtQjMXr%2fGXUc%2bdKh7OjQCWdzTypNjozA65kILpc%3d&risl=&pid=ImgRaw&r=0"})`,
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center",
                     backgroundSize: "contain",
@@ -93,30 +97,8 @@ export default function ProdactId() {
                 <div className="carousel-item relative float-left w-full">
                   <div style={{
                     width: "100%",
-                    height: "460px",
-                    backgroundImage: `url(${require("../../images/mobile1.png")})`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                    backgroundSize: "contain",
-                  }}>
-                  </div>
-                </div>
-                <div className="carousel-item relative float-left w-full">
-                  <div style={{
-                    width: "100%",
-                    height: "460px",
-                    backgroundImage: `url(${"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-14-plus.jpg"})`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                    backgroundSize: "contain",
-                  }}>
-                  </div>
-                </div>
-                <div className="carousel-item relative float-left w-full">
-                  <div style={{
-                    width: "100%",
-                    height: "460px",
-                    backgroundImage: `url(${require("../../images/mobile2.png")})`,
+                    height: "500px",
+                    backgroundImage: `url("https://almali.store/wp-content/uploads/2021/09/530309-Product-1-I-637675024349392442_800x800-600x600.jpg")`,
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center",
                     backgroundSize: "contain",
@@ -152,146 +134,173 @@ export default function ProdactId() {
           </Grid>
           <Grid item xs={12} sm={12} md={8} lg={6}>
             <Stack  sx={{ padding: { xs: '20px 0px 0px', md: '20px' }, }}>
-                <Stack style={
-                  {
-                    marginBottom: "calc( 20px - 5.6px)",
-                  }
-                }>
-                  <Typography variant="h5" gutterBottom>
-                    Aphone 14
-                  </Typography>
-                  <Typography
-                    variant="subtitle1" 
-                    gutterBottom
-                    sx={{
-                      margin: "0px",
-                    }}
-                  >
-                    Phone 14, iPhone 14 Plus Get Up to Rs. 43,000 Discount; Available on Limited Time Offer&nbsp; 
-                    <span 
-                      style={{ 
-                      color: "#faaf00",
-                      fontWeight: "600",
-                      }}
-                    >
-                      4.5
-                    </span>
-                  </Typography>
-                </Stack>
-                <Grid container>
-                    <Typography variant="h6" gutterBottom>
-                      brand:
-                    </Typography>
-                    <Typography 
-                      variant="h6" 
-                      gutterBottom
-                        style={{ 
-                          fontWeight: "700",
-                        }}
-                      >
-                      &nbsp; Apople
-                    </Typography>
-                </Grid>
-                <Grid container style={
-                  {
-                    marginBottom: "20px",
-                  }
-                }>
-                  <CircleIcon
-                    size="larg"
-                    sx={{
-                      marginRight: "10px",
-                      color: "red",
-                      cursor: "pointer",
-                    }}
-                  />
-                  <CircleIcon
-                    size="larg"
-                    sx={{
-                      marginRight: "10px",
-                      color: "blue",
-                      cursor: "pointer",
-                    }}
-                  />
-                  <CircleIcon
-                    size="larg"
-                    sx={{
-                      marginRight: "10px",
-                      color: "green",
-                      cursor: "pointer",
-                    }}
-                  />
-                  <CircleIcon
-                    size="larg"
-                    sx={{
-                      marginRight: "10px",
-                      color: "yellow",
-                      cursor: "pointer",
-                    }}
-                  />
-                </Grid>
-                <Stack style={
-                  {
-                    marginBottom: "20px",
-                  }
-                }>
-                  <Typography variant="h6" gutterBottom>
-                    Description
-                  </Typography>
-                  <Typography variant="subtitle1" gutterBottom>
-                    subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                    blanditiis tenetur subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                    blanditiis tenetur subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                    blanditiis tenetur subtitle1.
-                  </Typography>
-                </Stack>
-                <Stack 
-                  sx={{
-                    marginBottom: "20px",
+              <Typography variant="h5" gutterBottom>
+                Aphone 14
+              </Typography>
+              <Typography
+                variant="subtitle1" 
+                gutterBottom
+                sx={{
+                  marginBottom: "14px",
+                }}
+              >
+                Phone 14, iPhone 14 Plus Get Up to Rs. 43,000 Discount; Available on Limited Time Offer&nbsp; 
+                <span 
+                  style={{ 
+                  color: "#faaf00",
+                  fontWeight: "600",
                   }}
                 >
-                  <Typography variant="h6" gutterBottom
+                  4.5
+                </span>
+              </Typography>
+              <Grid container>
+                <Typography 
+                  variant="h6" 
+                  gutterBottom
                     sx={{
-                      fontWeight: "700",
+                      marginBottom: "14px",
                     }}
                   >
-                    3600.00 $
-                  </Typography>
-                </Stack>
-                <Grid container>
-                  <Grid>
-                    <Button variant="contained" style={{
-                      marginRight: "10px",
-                    }}>
-                      order now
-                    </Button>
-                  </Grid>
-                  <Grid>
-                    <Button variant="contained"
-                    startIcon={<LocalGroceryStoreOutlinedIcon />}
-                    style={{
-                      backgroundColor: "#272727",
-                      marginRight: "10px",
+                  brand:
+                </Typography>
+                <Typography 
+                  variant="h6" 
+                  gutterBottom
+                    sx={{
+                      marginBottom: "14px",
                     }}
-                    onClick={handleClick}
-                    >
-                      Add to cart
-                    </Button>
-                    <Snackbar
-                      open={open}
-                      autoHideDuration={6000}
-                      onClose={handleClose}
-                      message="Added to cart"
-                      action={
-                        <BeenhereIcon 
-                          sx={{
-                            color: "green",
-                          }}
-                        />
-                      }
+                  >
+                  &nbsp;Apople
+                </Typography>
+              </Grid>
+              <Grid container style={
+                {
+                  marginBottom: "14px",
+                }
+              }>
+                <CircleIcon
+                  size="x-larg"
+                  sx={{
+                    marginRight: "10px",
+                    color: "red",
+                    cursor: "pointer",
+                    fontSize: "28px",
+                  }}
+                />
+                <CircleIcon
+                  size="x-larg"
+                  sx={{
+                    marginRight: "10px",
+                    color: "blue",
+                    cursor: "pointer",
+                    fontSize: "28px",
+                  }}
+                />
+                <CircleIcon
+                  size="x-larg"
+                  sx={{
+                    marginRight: "10px",
+                    color: "green",
+                    cursor: "pointer",
+                    fontSize: "28px",
+                  }}
+                />
+                <CircleIcon
+                  size="x-larg"
+                  sx={{
+                    marginRight: "10px",
+                    color: "yellow",
+                    cursor: "pointer",
+                    fontSize: "28px",
+                  }}
+                />
+              </Grid>
+              <Typography variant="h6" gutterBottom>
+                Description
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom
+                sx={{
+                  marginBottom: '14px',
+                }}
+              >
+                subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+                blanditiis tenetur subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+                blanditiis tenetur subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+                blanditiis tenetur subtitle1.
+              </Typography>
+              <Typography variant="h6" gutterBottom
+                sx={{
+                  fontWeight: "700",
+                  marginBottom: "14px",
+                }}
+              >
+                3600.00 $
+              </Typography>
+              <div className=" xl:w-96 flex items-center space-x-2"
+                style={{
+                  marginBottom: "14px",
+                }}
+              >
+                <label
+                  htmlFor="exampleFormControlInput1"
+                  className="form-label inline-block text-gray-700"
+                >
+                  Quantity
+                </label>
+                <input
+                  type="number"
+                  className="
+                        form-control
+                        block
+                        px-3
+                        py-1.5
+                        text-base
+                        font-normal
+                        text-gray-700
+                        bg-white bg-clip-padding
+                        border border-solid border-gray-300
+                        rounded
+                              transition
+                        ease-in-out
+                        m-0
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                      "
+                  id="exampleFormControlInput1"
+                  placeholder=""
+                  defaultValue={1}
+                />
+              </div>
+              <Grid container>
+                <Button variant="contained" style={{
+                  marginRight: "10px",
+                }}>
+                  order now
+                </Button>
+                <Button variant="contained"
+                  startIcon={<LocalGroceryStoreOutlinedIcon />}
+                  style={{
+                    backgroundColor: "#272727",
+                    marginRight: "10px",
+                  }}
+                  onClick={handleClick}
+                >
+                  Add to cart
+                </Button>
+                <Snackbar
+                  open={open}
+                  autoHideDuration={6000}
+                  onClose={handleClose}
+                  message="Added to cart"
+                  action={
+                    <BeenhereIcon 
+                      sx={{
+                        color: "green",
+                      }}
                     />
-                  </Grid>
-                </Grid>
+                  }
+                />
+              </Grid>
             </Stack>
           </Grid>
         </Grid>

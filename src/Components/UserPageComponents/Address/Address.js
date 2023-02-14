@@ -12,8 +12,24 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import AddIcon from '@mui/icons-material/Add';
 import BeenhereIcon from '@mui/icons-material/Beenhere';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 export default function Address() {
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <Container fixed>
@@ -68,12 +84,12 @@ export default function Address() {
                           color: "red",
                           cursor: "pointer",
                         }}
+                        onClick={handleClickOpen}
                       />
                   </TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-
                   <TableRow
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                   >
@@ -91,7 +107,6 @@ export default function Address() {
                         />
                     </TableCell>
                   </TableRow>
-
                   <TableRow
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                   >
@@ -109,7 +124,6 @@ export default function Address() {
                         />
                     </TableCell>
                   </TableRow>
-
                   <TableRow
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                   >
@@ -126,21 +140,43 @@ export default function Address() {
                           }}
                         />
                     </TableCell>
-                  </TableRow>     
-
+                  </TableRow>
               </TableBody>
             </Table>
           </TableContainer>
-
           )
         })
       }
-          <TableContainer component={Paper}
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="responsive-dialog-title"
+      >
+        <DialogTitle id="responsive-dialog-title">
+          {"Delete"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Are you sure to delete this address from the address book?
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button
             sx={{
-              marginBottom: "20px",
+              color: "#272727",
             }}
-          >
-          </TableContainer>
+            autoFocus onClick={handleClose}>
+            Cancel
+          </Button>
+          <Button
+            sx={{
+              color: "#272727",
+            }}
+          onClick={handleClose} autoFocus>
+            Ok
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Container>
   );
 }; 
